@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+
+    <!-- Line chart / forecast -->
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M3,17h2l3.5,-6 4,5 3,-4 5.5,7h2l-7.5,-10 -3,4 -4,-5z"/>
+    <path
+        android:fillColor="@android:color/black"
+        android:pathData="M3,3h18v2H3zM3,19h18v2H3z"/>
+</vector>

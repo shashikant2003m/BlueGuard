@@ -1,0 +1,15 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24.0"
+    android:viewportHeight="24.0"
+    android:tint="?attr/colorControlNormal">
+
+    <!--
+        The 'path' element defines the shape of the icon using a vector path data string.
+        This particular path data corresponds to a Material Design 'security' icon.
+    -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,1L3,5v6c0,5.55 3.84,10.74 9,12c5.16,-1.26 9,-6.45 9,-12V5L12,1zM12,21.5c-3.15,-0.6 -6,-3.44 -6,-9.5V6l6,-2.25L18,6v6c0,6.06 -2.85,8.9 -6,9.5zM12,17c2.21,0 4,-1.79 4,-4s-1.79,-4 -4,-4s-4,1.79 -4,4s1.79,4 4,4z"/>
+</vector>

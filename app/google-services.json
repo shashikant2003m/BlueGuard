@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "606593014658",
+    "project_id": "blueguard-2c299",
+    "storage_bucket": "blueguard-2c299.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606593014658:android:aa3d68d55e3fe0069a4d9b",
+        "android_client_info": {
+          "package_name": "com.example.blueguard"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDu-6m8yCUWCOJmKJe40zb1YUJH0iJdJno"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

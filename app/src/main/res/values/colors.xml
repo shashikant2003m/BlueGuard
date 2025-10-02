@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors -->
+    <color name="teal_dark">#0a1728</color>
+    <color name="teal_primary">#1a4b73</color>
+    <color name="teal_light">#2596be</color>
+    <color name="teal_bright">#00d4ff</color>
+    <color name="cyan_bright">#00ffff</color>
+
+    <!-- Background Colors -->
+    <color name="background_primary">#0a1728</color>
+    <color name="background_secondary">#1a2332</color>
+    <color name="background_tertiary">#2a3441</color>
+
+    <!-- Glass Effect Colors -->
+    <color name="glass_bg">#33ffffff</color>
+    <color name="glass_border">#66ffffff</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#ffffff</color>
+    <color name="text_secondary">#b3c5d9</color>
+    <color name="text_hint">#66b3c5d9</color>
+    <color name="text_disabled">#33ffffff</color>
+
+    <!-- Button Colors -->
+    <color name="button_gradient_start">#2596be</color>
+    <color name="button_gradient_end">#00d4ff</color>
+    <color name="button_pressed">#1a86a8</color>
+
+    <!-- Input Colors -->
+    <!-- Input Colors (Updated to match accent theme) -->
+    <color name="input_bg">#183E8A</color> <!-- Deep blue background -->
+    <color name="input_border">#00BFFF</color> <!-- Accent cyan border -->
+    <color name="input_focused">#00D4FF</color> <!-- Bright cyan glow when focused -->
+
+    <!-- write code for color orange bright -->
+    <color name="orange_bright">#FFA500</color>
+    <!-- write code for color red bright -->
+    <color name="red_bright">#FF4500</color>
+    <!-- write code for color purple bright -->
+    <color name="purple_bright">#800080</color>
+    <!-- Accent Colors -->
+    <color name="accent_blue">#007bff</color>
+    <color name="accent_green">#28a745</color>
+    <color name="accent_orange">#fd7e14</color>
+    <color name="accent_purple">#6f42c1</color>
+
+    <!-- Status Colors -->
+    <color name="success_green">#00c851</color>
+    <color name="warning_orange">#ffbb33</color>
+    <color name="error_red">#ff4444</color>
+    <color name="info_blue">#33b5e5</color>
+
+    <!-- Neutral Colors -->
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray_light">#f8f9fa</color>
+    <color name="gray_medium">#6c757d</color>
+    <color name="gray_dark">#343a40</color>
+
+    <!-- Divider & Border Colors -->
+    <color name="divider_color">#1affffff</color>
+    <color name="border_color">#33ffffff</color>
+
+    <!-- Overlay Colors -->
+    <color name="overlay_dark">#80000000</color>
+    <color name="overlay_light">#40ffffff</color>
+    <color name="loading_overlay">#cc000000</color>
+
+    <!-- Feature Pill Colors -->
+    <color name="pill_bg">#332596be</color>
+    <color name="pill_border">#662596be</color>
+
+    <!-- Icon Background Colors -->
+    <color name="icon_bg_gradient">#2596be</color>
+    <color name="icon_bg_secondary">#1a4b73</color>
+
+    <!-- Status Bar Colors -->
+    <color name="status_bar_color">#0a1728</color>
+
+    <!-- Card Colors -->
+    <color name="card_bg_primary">#1a2332</color>
+    <color name="card_bg_secondary">#2a3441</color>
+    <color name="card_bg_tertiary">#3a4551</color>
+
+    <!-- Shadow Colors -->
+    <color name="shadow_light">#1a000000</color>
+    <color name="shadow_medium">#33000000</color>
+    <color name="shadow_dark">#66000000</color>
+
+    <!-- Wave Animation Colors -->
+    <color name="wave_color_1">#1a2596be</color>
+    <color name="wave_color_2">#2600d4ff</color>
+    <color name="wave_color_3">#3300ffff</color>
+
+    <!-- Social Login Colors -->
+    <color name="google_bg">#ffffff</color>
+    <color name="apple_bg">#000000</color>
+    <color name="facebook_bg">#1877f2</color>
+
+    <!-- Particle Colors -->
+    <color name="particle_color">#1affffff</color>
+    <color name="particle_trail">#0dffffff</color>
+
+
+</resources>
