@@ -33,7 +33,6 @@ class AlertsWarningsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alerts_warnings)
 
-        // Loader overlay + animation
         progressOverlay = findViewById(R.id.progressOverlay)
         progress = findViewById(R.id.progress)
 
@@ -44,7 +43,6 @@ class AlertsWarningsActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        // TextViews
         tvBeachTitle = findViewById(R.id.tvBeachTitle)
         tvCurrentAlerts = findViewById(R.id.tvCurrentAlerts)
         tvWeatherWarnings = findViewById(R.id.tvWeatherWarnings)
