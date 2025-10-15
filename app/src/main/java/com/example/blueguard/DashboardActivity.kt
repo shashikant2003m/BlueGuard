@@ -17,7 +17,6 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     private var selectedBeach: String? = null // null until selected
 
-    // Views
     private lateinit var tvGreeting: TextView
     private lateinit var tvLocation: TextView
     private lateinit var tvSuitability: TextView
@@ -35,7 +34,6 @@ class DashboardActivity : AppCompatActivity() {
 
         sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
 
-        // Views
         tvGreeting = findViewById(R.id.tvGreeting)
         tvLocation = findViewById(R.id.tvLocation)
         val autoCompleteBeaches: MaterialAutoCompleteTextView = findViewById(R.id.autoCompleteBeaches)
@@ -50,10 +48,6 @@ class DashboardActivity : AppCompatActivity() {
         cardWater = findViewById(R.id.cardWaterQuality)
         cardForecast = findViewById(R.id.cardForecast)
 
-
-
-
-        // Greeting
         val userName = getUserName()
         tvGreeting.text = if (userName.isNotEmpty()) "Hello, $userName 👋" else "Hello, User 👋"
 

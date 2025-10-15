@@ -33,7 +33,6 @@ class WaterQualityActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_water_quality)
 
-        // Loader overlay + animation
         progressOverlay = findViewById(R.id.progressOverlay)
         progress = findViewById(R.id.progress)
 
@@ -44,7 +43,6 @@ class WaterQualityActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
-        // TextViews
         tvBeachTitle = findViewById(R.id.tvBeachTitle)
         tvQualityStatus = findViewById(R.id.tvQualityStatus)
         tvWaterParameters = findViewById(R.id.tvWaterParameters)
