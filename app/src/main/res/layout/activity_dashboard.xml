@@ -76,7 +76,8 @@
                 app:cardBackgroundColor="@color/white"
                 android:clickable="true"
                 android:focusable="true"
-                android:foreground="?attr/selectableItemBackground">
+                android:foreground="?attr/selectableItemBackground"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -286,4 +287,23 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <!-- Fullscreen Progress Overlay -->
+    <FrameLayout
+        android:id="@+id/progressOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/progress"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center"
+            app:lottie_autoPlay="false"
+            app:lottie_loop="true"
+            app:lottie_url="https://lottie.host/31988c1d-a0c6-4534-84e5-6792c4bfec29/HLe4gUDWow.lottie" />
+    </FrameLayout>
+
 </RelativeLayout>

@@ -6,7 +6,7 @@ data class OpenRouterMessage(
 )
 
 data class OpenRouterRequest(
-    val model: String = "deepseek/deepseek-r1-0528:free",
+    val model: String = "minimax/minimax-m2:free",
     val messages: List<OpenRouterMessage>
 )
 
