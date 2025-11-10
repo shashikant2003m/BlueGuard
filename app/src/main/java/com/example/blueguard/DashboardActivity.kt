@@ -25,7 +25,6 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var sharedPreferences: SharedPreferences
     private var selectedBeach: String? = null
 
-    // Firebase Auth
     private lateinit var firebaseAuth: FirebaseAuth
 
     private lateinit var tvGreeting: TextView
@@ -38,7 +37,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var cardAlerts: View
     private lateinit var cardWater: View
     private lateinit var cardForecast: View
-    private lateinit var btnLogout: ImageButton // Logout Button
+    private lateinit var btnLogout: ImageButton
 
     // Loader views
     private lateinit var progressOverlay: View

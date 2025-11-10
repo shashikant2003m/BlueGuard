@@ -16,12 +16,10 @@ class SplashActivity : AppCompatActivity() {
             val intent = Intent(this, DashboardActivity::class.java)
             startActivity(intent)
         } else {
-            // If user is NOT logged in, go to WelcomeActivity
             val intent = Intent(this, WelcomeActivity::class.java)
             startActivity(intent)
         }
 
-        // Finish this activity so the user can't navigate back to it
         finish()
     }
 }
