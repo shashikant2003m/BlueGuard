@@ -38,8 +38,6 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var cardWater: View
     private lateinit var cardForecast: View
     private lateinit var btnLogout: ImageButton
-
-    // Loader views
     private lateinit var progressOverlay: View
     private lateinit var progress: LottieAnimationView
     private lateinit var cardAiRecommendation: View
