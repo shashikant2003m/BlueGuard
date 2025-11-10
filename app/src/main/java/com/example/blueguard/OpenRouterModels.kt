@@ -6,7 +6,7 @@ data class OpenRouterMessage(
 )
 
 data class OpenRouterRequest(
-    val model: String = "minimax/minimax-m2:free",
+    val model: String = "openai/gpt-oss-20b:free",
     val messages: List<OpenRouterMessage>
 )
 

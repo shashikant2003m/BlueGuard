@@ -13,10 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BlueGuard">
 
-        <activity android:name=".PhoneLoginActivity" />
-
+        <!-- SplashActivity is now the ONLY launcher activity -->
         <activity
-            android:name=".WelcomeActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,12 +23,26 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".OtpVerificationActivity" />
-        <activity android:name=".DashboardActivity" />
-        <activity android:name=".ExploreBeachActivity"/>
-        <activity android:name=".AlertsWarningsActivity" />
-        <activity android:name=".WaterQualityActivity" />
-    </application>
+        <!-- WelcomeActivity is now a regular activity with no intent filter -->
+        <activity
+            android:name=".WelcomeActivity"
+            android:exported="false" />
 
+        <activity
+            android:name=".PhoneLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardActivity"
+            android:exported="false" />
+        <activity android:name=".OtpVerificationActivity"
+            android:exported="false" />
+        <activity android:name=".ExploreBeachActivity"
+            android:exported="false"/>
+        <activity android:name=".AlertsWarningsActivity"
+            android:exported="false"/>
+        <activity android:name=".WaterQualityActivity"
+            android:exported="false"/>
+
+    </application>
 
 </manifest>

@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.airbnb.lottie.LottieAnimationView
 import com.example.blueguard.data.*
 import com.google.android.material.textfield.MaterialAutoCompleteTextView
+import com.google.firebase.auth.FirebaseAuth // Import FirebaseAuth
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Callback
@@ -23,6 +24,9 @@ class DashboardActivity : AppCompatActivity() {
 
     private lateinit var sharedPreferences: SharedPreferences
     private var selectedBeach: String? = null
+
+    // Firebase Auth
+    private lateinit var firebaseAuth: FirebaseAuth
 
     private lateinit var tvGreeting: TextView
     private lateinit var tvLocation: TextView
@@ -34,6 +38,7 @@ class DashboardActivity : AppCompatActivity() {
     private lateinit var cardAlerts: View
     private lateinit var cardWater: View
     private lateinit var cardForecast: View
+    private lateinit var btnLogout: ImageButton // Logout Button
 
     // Loader views
     private lateinit var progressOverlay: View
@@ -45,11 +50,13 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
 
         sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
+        firebaseAuth = FirebaseAuth.getInstance() // Initialize FirebaseAuth
 
         // Initialize views
         tvGreeting = findViewById(R.id.tvGreeting)
         tvLocation = findViewById(R.id.tvLocation)
         val autoCompleteBeaches: MaterialAutoCompleteTextView = findViewById(R.id.autoCompleteBeaches)
+        btnLogout = findViewById(R.id.btnLogout) // Find the logout button
 
         tvSuitability = findViewById(R.id.tvSuitability)
         tvConditionSummary = findViewById(R.id.tvConditionSummary)
@@ -78,10 +85,24 @@ class DashboardActivity : AppCompatActivity() {
 
         setupBeachDropdown(autoCompleteBeaches, tvLocation)
         setupNavigationCards()
+        setupLogoutButton() // Call the new logout setup function
+    }
+
+    private fun setupLogoutButton() {
+        btnLogout.setOnClickListener {
+            firebaseAuth.signOut() // Sign out the user
+            val intent = Intent(this, PhoneLoginActivity::class.java)
+            // Clear the activity stack to prevent the user from going back to the dashboard
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish() // Close the DashboardActivity
+        }
     }
 
     private fun getUserName(): String = sharedPreferences.getString("user_name", "") ?: ""
 
+    // ... (the rest of your DashboardActivity code remains the same)
+//highlight-next-line
     private fun setupBeachDropdown(
         autoComplete: MaterialAutoCompleteTextView,
         tvLocation: TextView
@@ -233,7 +254,6 @@ class DashboardActivity : AppCompatActivity() {
                     ).show()
                     return
                 }
-
                 try {
                     val gson = com.google.gson.Gson()
                     val parsed = gson.fromJson(rawString, OpenRouterResponse::class.java)
