@@ -10,12 +10,9 @@ class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // Get the current Firebase user
         val firebaseUser = FirebaseAuth.getInstance().currentUser
 
-        // Decide which activity to launch
         if (firebaseUser != null) {
-            // If user is logged in, go to Dashboard
             val intent = Intent(this, DashboardActivity::class.java)
             startActivity(intent)
         } else {
