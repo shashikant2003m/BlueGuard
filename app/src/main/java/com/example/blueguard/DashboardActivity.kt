@@ -47,13 +47,13 @@ class DashboardActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dashboard)
 
         sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
-        firebaseAuth = FirebaseAuth.getInstance() // Initialize FirebaseAuth
+        firebaseAuth = FirebaseAuth.getInstance()
 
         // Initialize views
         tvGreeting = findViewById(R.id.tvGreeting)
         tvLocation = findViewById(R.id.tvLocation)
         val autoCompleteBeaches: MaterialAutoCompleteTextView = findViewById(R.id.autoCompleteBeaches)
-        btnLogout = findViewById(R.id.btnLogout) // Find the logout button
+        btnLogout = findViewById(R.id.btnLogout)
 
         tvSuitability = findViewById(R.id.tvSuitability)
         tvConditionSummary = findViewById(R.id.tvConditionSummary)
@@ -82,7 +82,7 @@ class DashboardActivity : AppCompatActivity() {
 
         setupBeachDropdown(autoCompleteBeaches, tvLocation)
         setupNavigationCards()
-        setupLogoutButton() // Call the new logout setup function
+        setupLogoutButton()
     }
 
     private fun setupLogoutButton() {
@@ -98,8 +98,7 @@ class DashboardActivity : AppCompatActivity() {
 
     private fun getUserName(): String = sharedPreferences.getString("user_name", "") ?: ""
 
-    // ... (the rest of your DashboardActivity code remains the same)
-//highlight-next-line
+
     private fun setupBeachDropdown(
         autoComplete: MaterialAutoCompleteTextView,
         tvLocation: TextView
@@ -175,10 +174,8 @@ class DashboardActivity : AppCompatActivity() {
                 tvLocation.text = "Your location: $selected"
                 selectedBeach = selected
 
-                // Enable the cards now
                 setCardsEnabled(true)
 
-                // Fetch AI suitability analysis
                 fetchBeachSuitability(selected)
 
                 Toast.makeText(this, "Selected: $selected", Toast.LENGTH_SHORT).show()
@@ -211,7 +208,8 @@ class DashboardActivity : AppCompatActivity() {
             }
         }
         cardForecast.setOnClickListener {
-            showMessage("Suitability Forecast clicked")
+            val intent = Intent(this, ForecastMapActivity::class.java)
+            startActivity(intent)
         }
     }
 

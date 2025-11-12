@@ -42,15 +42,12 @@ class ExploreBeachActivity : AppCompatActivity() {
 
         val backButton = findViewById<CardView>(R.id.backButton) // Or use binding.backButton
 
-        // Set an OnClickListener
         backButton.setOnClickListener {
-            // This will simulate the system back button press
             onBackPressedDispatcher.onBackPressed()
-            // Alternatively, if you want to finish the current activity:
+
             // finish()
         }
 
-        // TextViews
         tvBeachTitle = findViewById(R.id.tvBeachTitle)
         tvOverview = findViewById(R.id.tvOverview)
         tvHighlights = findViewById(R.id.tvHighlights)
@@ -58,7 +55,6 @@ class ExploreBeachActivity : AppCompatActivity() {
         tvSafety = findViewById(R.id.tvSafety)
         tvNearby = findViewById(R.id.tvNearby)
 
-        // Initialize beach variable first
         val beach = intent.getStringExtra("EXTRA_BEACH_NAME") ?: "Baga Beach"
         tvBeachTitle.text = "Explore: $beach"
 
@@ -81,12 +77,12 @@ class ExploreBeachActivity : AppCompatActivity() {
 
     private fun setBeachImage(beachName: String) {
         val resourceName = beachName
-            .replace(" ", "")        // Remove spaces
-            .replace("’", "")        // Remove special apostrophes
+            .replace(" ", "")
+            .replace("’", "")
             .replace("'", "")
             .replace("(", "")
             .replace(")", "")
-            .lowercase()             // Make lowercase to match your drawable names
+            .lowercase()
 
         val resId = resources.getIdentifier(resourceName, "drawable", packageName)
 

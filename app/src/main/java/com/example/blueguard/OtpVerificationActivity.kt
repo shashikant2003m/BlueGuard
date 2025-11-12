@@ -51,7 +51,6 @@ class OtpVerificationActivity : AppCompatActivity() {
             }
         }
 
-        // Auto show keyboard on first digit
         otpFields[0].requestFocus()
         val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
         imm.showSoftInput(otpFields[0], InputMethodManager.SHOW_IMPLICIT)

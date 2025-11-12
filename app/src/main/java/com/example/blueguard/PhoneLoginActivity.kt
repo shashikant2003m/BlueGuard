@@ -35,16 +35,13 @@ class PhoneLoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_phone_login)
 
-        // Initialize Firebase Auth and SharedPreferences
         auth = FirebaseAuth.getInstance()
         sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE)
 
-        // Initialize views
         nameInput = findViewById(R.id.nameInput)
         phoneNumberInput = findViewById(R.id.phoneNumberInput)
         continueButton = findViewById(R.id.continueButton)
 
-        // Setup Phone Auth Callbacks
         callbacks = object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             override fun onVerificationCompleted(credential: PhoneAuthCredential) {
                 Log.d(TAG, "onVerificationCompleted:$credential")
@@ -54,7 +51,6 @@ class PhoneLoginActivity : AppCompatActivity() {
             override fun onVerificationFailed(e: FirebaseException) {
                 Log.w(TAG, "onVerificationFailed", e)
 
-                // Show specific error messages
                 when {
                     e.message?.contains("BILLING_NOT_ENABLED") == true -> {
                         showError("Billing not enabled. Please upgrade your Firebase project to Blaze plan.")
@@ -81,16 +77,13 @@ class PhoneLoginActivity : AppCompatActivity() {
                 Log.d(TAG, "onCodeSent:$verificationId")
                 super.onCodeSent(verificationId, token)
 
-                // Store verification ID and user name before navigating
                 this@PhoneLoginActivity.verificationId = verificationId
 
-                // Save user name to SharedPreferences
                 val userName = nameInput.text.toString().trim()
                 saveUserName(userName)
 
                 Toast.makeText(this@PhoneLoginActivity, "OTP sent successfully!", Toast.LENGTH_SHORT).show()
 
-                // Navigate to OTP screen
                 val intent = Intent(this@PhoneLoginActivity, OtpVerificationActivity::class.java)
                 intent.putExtra("verificationId", verificationId)
                 intent.putExtra("userName", userName)
@@ -98,7 +91,6 @@ class PhoneLoginActivity : AppCompatActivity() {
             }
         }
 
-        // Continue button click listener
         continueButton.setOnClickListener {
             validateAndProceed()
         }
@@ -127,10 +119,8 @@ class PhoneLoginActivity : AppCompatActivity() {
             return
         }
 
-        // Clear any previous errors
         hideError()
 
-        // Proceed with phone verification
         val fullPhoneNumber = "+91$phoneNumber"
         Log.d(TAG, "Starting verification for: $fullPhoneNumber")
         startPhoneVerification(fullPhoneNumber)
@@ -146,7 +136,6 @@ class PhoneLoginActivity : AppCompatActivity() {
                 .build()
             PhoneAuthProvider.verifyPhoneNumber(options)
 
-            // Show loading state
             Toast.makeText(this, "Sending verification code...", Toast.LENGTH_SHORT).show()
 
         } catch (e: Exception) {
@@ -180,10 +169,9 @@ class PhoneLoginActivity : AppCompatActivity() {
                     Log.d(TAG, "signInWithCredential:success")
                     Toast.makeText(this, "Login Successful!", Toast.LENGTH_SHORT).show()
 
-                    // Navigate to Dashboard
                     val intent = Intent(this, DashboardActivity::class.java)
                     startActivity(intent)
-                    finish() // Close this activity
+                    finish()
 
                 } else {
                     Log.w(TAG, "signInWithCredential:failure", task.exception)
