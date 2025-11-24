@@ -15,8 +15,6 @@ BlueGuard is an intelligent Android application that provides comprehensive beac
   <img src="https://i.postimg.cc/T300LdYJ/Screenshot-20251124-125230.png" width="200" alt="OTP Verification"/>
   <img src="https://i.postimg.cc/Dw66JvyN/Screenshot-20251124-125306.png" width="200" alt="Registration"/>
   <img src="https://i.postimg.cc/9QbbRmFv/Screenshot-20251124-125318.png" width="200" alt="Dashboard"/>
-</div>
-<div align="center">
   <img src="https://i.postimg.cc/tgg5FKYm/Screenshot-20251124-125326.png" width="200" alt="Beach Selection"/>
   <img src="https://i.postimg.cc/wBBVDC1K/Screenshot-20251124-125353.png" width="200" alt="AI Analysis"/>
   <img src="https://i.postimg.cc/xddRLwcw/Screenshot-20251124-125420.png" width="200" alt="Explore Beach"/>
